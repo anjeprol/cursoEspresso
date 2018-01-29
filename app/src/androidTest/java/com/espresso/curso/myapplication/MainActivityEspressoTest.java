@@ -1,3 +1,9 @@
+/*
+ *      File: MainActivityEspressoTest.java
+ *    Author: Antonio Prado <antonio.prado@amk-technologies.com>
+ *      Date: Jan 30, 2018
+ * Copyright: AMK Technologies, S.A. de C.V. 2017
+ */
 package com.espresso.curso.myapplication;
 
 import android.support.test.rule.ActivityTestRule;
@@ -16,7 +22,15 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
- * Created by antoniopradoo on 1/28/18.
+ * Espresso course.
+ *
+ * <p>This is the main class to run the test project.
+ * The propose of this project is to help any new member get knowledge creating functional testing
+ * working with Espresso.</p>
+ *
+ * @author Antonio Prado &lt;antonio.prado@amk-technologies.com&gt;
+ * @version 1.0.0
+ * @since 1.0.0
  */
 
 @RunWith(AndroidJUnit4.class)

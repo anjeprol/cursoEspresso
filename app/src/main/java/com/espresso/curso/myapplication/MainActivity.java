@@ -1,5 +1,11 @@
-package com.espresso.curso.myapplication;
+/*
+ *      File: MainActivity.java
+ *    Author: Antonio Prado <antonio.prado@amk-technologies.com>
+ *      Date: Jan 30, 2018
+ * Copyright: AMK Technologies, S.A. de C.V. 2017
+ */
 
+package com.espresso.curso.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,46 +14,73 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * Espresso course.
+ *
+ * <p>This is the main class to run the test project.
+ * The propose of this project is to help any new member get knowledge creating functional testing
+ * working with Espresso.</p>
+ *
+ * @author Antonio Prado &lt;antonio.prado@amk-technologies.com&gt;
+ * @version 1.0.0
+ * @since 1.0.0
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button mReset_b;
-    private Button mChangeActivity_b;
-    private Button mChangeText_b;
-    private EditText mText_et;
+    /**
+     * The name of reset button.
+     */
+    private Button mResetButton;
+    /**
+     * The name of change activity button.
+     */
+    private Button mChangeActivityButton;
+    /**
+     * The name of change text button.
+     */
+    private Button mChangeTextButton;
+    /**
+     * The name of edit text..
+     */
+    private EditText mEditText;
+    /**
+     * The name of text view.
+     */
     private TextView mTextView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mText_et = findViewById(R.id.text);
+        mEditText = findViewById(R.id.text);
         mTextView = findViewById(R.id.textView);
 
-        mChangeActivity_b = findViewById(R.id.changeActivity);
-        mReset_b = findViewById(R.id.reset);
-        mChangeText_b = findViewById(R.id.changeTextView);
+        mChangeActivityButton = findViewById(R.id.changeActivity);
+        mResetButton = findViewById(R.id.reset);
+        mChangeTextButton = findViewById(R.id.changeTextView);
 
-        mChangeActivity_b.setOnClickListener(this);
-        mReset_b.setOnClickListener(this);
-        mChangeText_b.setOnClickListener(this);
+        mChangeActivityButton.setOnClickListener(this);
+        mResetButton.setOnClickListener(this);
+        mChangeTextButton.setOnClickListener(this);
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId())
-        {
+    public void onClick(final View view) {
+        switch (view.getId()) {
             case R.id.reset:
-                mText_et.setText("");
+                mEditText.setText(R.string.str_empty_valid);
                 break;
             case R.id.changeActivity:
-                Intent intent = new Intent(this, Main2Activity.class);
-                intent.putExtra("input", mText_et.getText().toString());
+                final Intent intent = new Intent(this, Main2Activity.class);
+                intent.putExtra("input", mEditText.getText().toString());
                 startActivity(intent);
                 break;
             case R.id.changeTextView:
-                mTextView.setText(mText_et.getText().toString());
+                mTextView.setText(mEditText.getText().toString());
                 break;
-
+            default:
+                break;
         }
     }
 }
