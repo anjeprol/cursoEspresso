@@ -23,15 +23,35 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 public class MainActivityEspressoTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> mainActivityActivityTestRule =
-            new ActivityTestRule<MainActivity>(MainActivity.class);
+    public ActivityTestRule<MainActivity> mainActivity =
+            new ActivityTestRule<>(MainActivity.class);
 
     @Test
     public void verifyTextChangeWork() {
+        /**
+         * Adding the first input data.
+         */
         onView(withId(R.id.text))
                 .perform(typeText("TEST"), closeSoftKeyboard());
-        onView(withId(R.id.changeTextView))
-                .perform(click());
-        onView(withId(R.id.text)).check(matches(withText("TEST")));
+        /**
+         * Then click the button, change text.
+         */
+        onView(withId(R.id.changeTextView)).perform(click());
+        /**
+         * Checking the input at textView below change textView.
+         */
+        onView(withId(R.id.textView)).check(matches(withText("TEST")));
+
+        /**
+         * Then click change activity.
+         */
+        onView(withId(R.id.changeActivity)).perform(click());
+
+        /**
+         * Verify the data at activity 2.
+         */
+        onView(withId(R.id.text2))
+                .check(matches(withText("TEST")));
+
     }
 }
