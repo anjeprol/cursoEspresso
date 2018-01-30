@@ -30,6 +30,16 @@ public class Main2Activity extends AppCompatActivity {
      */
     private TextView mTextView;
 
+    /**
+     * You must implement this callback, which fires when the system first creates the activity.
+     * On activity creation, the activity enters the Created state. In the onCreate() method,
+     * you perform basic application startup logic that should happen only once for the entire
+     * life of the activity.
+     *
+     * @param savedInstanceState Bundle object containing the activity's previously saved state.
+     *                           If the activity has never existed before, the value of the Bundle
+     *                           object is null
+     */
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

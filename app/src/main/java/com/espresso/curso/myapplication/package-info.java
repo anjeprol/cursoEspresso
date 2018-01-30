@@ -6,7 +6,7 @@
  */
 
 /**
- * Espresso course, package from my application.
+ * Package from activities registered at main folder as activity.
  *
  * @author Antonio Prado &lt;antonio.prado@amk-technologies.com&gt;
  * @version 1.0.0
