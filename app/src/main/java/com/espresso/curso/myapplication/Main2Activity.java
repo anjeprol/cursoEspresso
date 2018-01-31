@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * Espresso course.
  *
- * <p>This is the main class to run the test project.
+ * <p>This is the second main class to run the test.
  * The propose of this project is to help any new member get knowledge creating functional testing
  * working with Espresso.</p>
  *
