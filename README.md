@@ -7,6 +7,7 @@ The objetive of this project is show how to build functional test by coding and 
 * [`Gradle configurations`](#gradle)
 * [`Espresso`](https://developer.android.com/training/testing/espresso/index.html)
   * [`cheat sheet espresso`](https://developer.android.com/training/testing/espresso/cheat-sheet.html)
+  * [`download sheet espress`](/docs/espresso-cheat-sheet-2.1.0.pdf)
 * [`Quick example`](#example-functional-test-code)
 
 ### Gradle
